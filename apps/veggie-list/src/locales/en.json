@@ -1,0 +1,40 @@
+{
+  "constants" : {
+    "units" : {
+      "unit": "Unit",
+      "dollars": "Dollars",
+      "libras": "Libras",
+      "kilograms": "Kilograms",
+      "grams": "Grams"
+    }
+  },
+  "page": {
+    "veggies": {
+        "title": "Veggies",
+        "description": "Maintain the list of vegetables",
+        "form" : {
+          "name": {
+            "placeholder": "Veggie Name in English",
+            "validation.required": "Name in English is required"
+          },
+          "name_es": {
+            "placeholder": "Veggie Name in Spansh",
+            "validation.required": "Name in Spanish is required"
+          },
+          "price": {
+            "placeholder": "e.g. 1,25",
+            "validation": {
+              "required": "Price is required",
+              "invalid": "Please enter a valid number",
+              "min": "Please enter a price > 0"
+            }
+          },
+          "submit.label" : "Add Veggie!"
+        }
+    },
+    "order": {
+        "description": "Create the list for the veggie truck",
+        "title": "Order"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "page": {
+    "order": {
+      "description": "Crea la lista para el camión de verduras.",
+      "title": "Ordenar"
+    },
+    "veggies": {
+      "description": "Mantener la lista de verduras.",
+      "title": "Verduras"
+    }
+  }
+}
