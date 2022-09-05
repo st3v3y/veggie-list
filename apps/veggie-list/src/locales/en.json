@@ -2,10 +2,10 @@
   "constants" : {
     "units" : {
       "unit": "Unit",
-      "dollars": "Dollars",
-      "libras": "Libras",
-      "kilograms": "Kilograms",
-      "grams": "Grams"
+      "dollar": "Dollars",
+      "libra": "Libra",
+      "kilogram": "Kilogram",
+      "gram": "Gram"
     }
   },
   "page": {

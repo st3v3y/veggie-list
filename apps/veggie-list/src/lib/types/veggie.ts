@@ -9,3 +9,10 @@ export type Veggie = {
 	created_at: Date;
 	updated_at: Date;
 };
+
+export enum PriceUnit {
+	"Unit",
+	"Libra",
+	"Kilogram",
+	"Gram"
+}

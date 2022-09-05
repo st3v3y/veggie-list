@@ -9,7 +9,7 @@
 
 <script lang="ts">
 	import Header from '$lib/components/header/Header.svelte';
-	import { isLoading, register, init, getLocaleFromNavigator, locale } from 'svelte-i18n';
+	import { isLoading, register, init, getLocaleFromNavigator } from 'svelte-i18n';
 	import '../app.css';
 	import { Modals, closeModal } from 'svelte-modals';
 

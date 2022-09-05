@@ -13,7 +13,7 @@
 </svelte:head>
 
 <section class="flex flex-col items-center">
-	<h1 class="mb-10">{$_("page.veggies.title")}</h1>
+	<h1 class="mb-10">{$_("page.veggies.title")} <span class="text-slate-500">({data.veggies.length})</span></h1>
 
 	{#each data.veggies as veggie (veggie.id)}
 		<Veggie veggie={veggie}></Veggie>

@@ -15,7 +15,7 @@ model Veggie {
   name          String
   name_es       String
   price         Float?
-  unit          PriceUnit   @default(Unit)
+  unit          PriceUnit   @default(unit)
   is_favorite   Boolean?    @default(false)
   picture_url   String?     
   created_at    DateTime    @default(now())
@@ -23,8 +23,8 @@ model Veggie {
 }
 
 enum PriceUnit {
-  Unit
-  Libra
-  Kilogram
-  Gram
+  unit
+  libra
+  kilogram
+  gram
 }

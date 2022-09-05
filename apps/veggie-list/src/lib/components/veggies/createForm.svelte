@@ -139,10 +139,10 @@
                         <span class="mt-3 mx-4">/</span>
                         <div class="grow">
                             <select name="unit" class="form-input w-full px-3 py-3 rounded-lg border border-slate-400">
-                                <option value="Unit">{$_('constants.units.unit')}</option>
-                                <option value="Libra">{$_('constants.units.libras')}</option>
-                                <option value="Kilogram">{$_('constants.units.kilograms')}</option>
-                                <option value="Gram">{$_('constants.units.grams')}</option>
+                                <option value="unit">{$_('constants.units.unit')}</option>
+                                <option value="libra">{$_('constants.units.libra')}</option>
+                                <option value="kilogram">{$_('constants.units.kilogram')}</option>
+                                <option value="gram">{$_('constants.units.gram')}</option>
                             </select>
                         </div>
                     </div>
