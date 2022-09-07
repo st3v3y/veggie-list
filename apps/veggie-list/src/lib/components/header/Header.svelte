@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import logo from './svelte-logo.svg';
+	import logo from './veggie-logo.svg';
 	import { locale, locales, _ } from 'svelte-i18n';
 	import LocaleSwitcher from './LocaleSwitcher.svelte';
 
@@ -11,7 +11,7 @@
 
 <header>
 	<div class="corner">
-		<a href="https://kit.svelte.dev">
+		<a href="/">
 			<img src={logo} alt="SvelteKit" />
 		</a>
 	</div>
