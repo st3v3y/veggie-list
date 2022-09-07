@@ -1,17 +1,26 @@
 {
   "constants" : {
     "units" : {
-      "unit": "Unidad",
-      "dollar": "Dolares",
-      "libra": "Libra",
-      "kilogram": "Kilogram",
-      "gram": "Gram"
+      "singular" : {
+        "unit": "Unidad",
+        "dollar": "Dólar",
+        "libra": "Libra",
+        "kilogram": "Kilogramo",
+        "gram": "Gramo"
+      },
+      "plural" : {
+        "unit": "Unidades",
+        "dollar": "Dolares",
+        "libra": "Libras",
+        "kilogram": "Kilogramos",
+        "gram": "Gramos"
+      }
     }
   },
   "page": {
     "veggies": {
-      "description": "Mantener la lista de verduras.",
       "title": "Verduritas",
+      "description": "Mantener la lista de verduras.",
       "form" : {
         "name": {
           "placeholder": "Nombre verdura en ingles",
@@ -34,7 +43,15 @@
     },
     "order": {
       "description": "Crea la lista para el camión de verduras.",
-      "title": "Ordenar"
+      "title": "Ordenar",
+      "text.copied": "Lo copió!",
+      "text.missing_amounts": "Verduras con cantidades faltantes:",
+      "form": {
+        "amount.placeholder": "Monto",
+        "comment.label" : "Comentario",
+        "comment.placeholder": "p.ej. maduro y de tamaño mediano",
+        "copy.label" : "Cópialo!"
+      }
     }
   }
 }

@@ -7,10 +7,10 @@
 	import { fade, scale } from 'svelte/transition';
     import enFlag from '$lib/assets/flags/en.svg';
     import esFlag from '$lib/assets/flags/es.svg';
-
+    import {config} from '$lib/config/config';
 
 	const unsplash = createApi({
-		accessKey: 'NVXATDH5GSdN0Jxna3Ja7oOyfFtY4lge0ar81LGKdUk',
+		accessKey: config.unsplashAccessKey
 	});
 
 	let createFormOpen:boolean = false;
@@ -139,10 +139,10 @@
                         <span class="mt-3 mx-4">/</span>
                         <div class="grow">
                             <select name="unit" class="form-input w-full px-3 py-3 rounded-lg border border-slate-400">
-                                <option value="unit">{$_('constants.units.unit')}</option>
-                                <option value="libra">{$_('constants.units.libra')}</option>
-                                <option value="kilogram">{$_('constants.units.kilogram')}</option>
-                                <option value="gram">{$_('constants.units.gram')}</option>
+                                <option value="unit">{$_('constants.units.singular.unit')}</option>
+                                <option value="libra">{$_('constants.units.singular.libra')}</option>
+                                <option value="kilogram">{$_('constants.units.singular.kilogram')}</option>
+                                <option value="gram">{$_('constants.units.singular.gram')}</option>
                             </select>
                         </div>
                     </div>

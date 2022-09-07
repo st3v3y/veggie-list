@@ -7,10 +7,11 @@
 	guarantees are made. Don't use it to organise your life.)
 */
 
-const base = 'http://127.0.0.1:3001/v1/veggies';
+import {config} from '$lib/config/config';
+
+const base = `${config.apiBaseUrl}/${config.apiVersion}/veggies`;
 
 export function api(method: string, resource: string, data?: Record<string, unknown>) {
-	console.log("sending to", `${base}/${resource}`, JSON.stringify(data))
 	return fetch(`${base}/${resource}`, {
 		method,
 		headers: {

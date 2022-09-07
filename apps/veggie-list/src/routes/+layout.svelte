@@ -12,6 +12,7 @@
 	import { isLoading, register, init, getLocaleFromNavigator } from 'svelte-i18n';
 	import '../app.css';
 	import { Modals, closeModal } from 'svelte-modals';
+	import Notifications from 'svelte-notifications';
 
 	register('es', () => import('../locales/es.json'));
     register('en', () => import('../locales/en.json'));
@@ -20,6 +21,7 @@
         fallbackLocale: 'es',
         initialLocale: getLocaleFromNavigator(),
     });
+
 </script>
 
 <Modals>
@@ -30,19 +32,21 @@
 	/>
 </Modals>
 
-{#if $isLoading} 
-	Loading...
-{:else}
-	<Header />
+<Notifications>
+	{#if $isLoading} 
+		Loading...
+	{:else}
+		<Header />
 
-	<main>
-		<slot />
-	</main>
+		<main>
+			<slot />
+		</main>
 
-	<footer>
-		<p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
-	</footer>
-{/if}
+		<footer>
+			<p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
+		</footer>
+	{/if}
+</Notifications>
 
 <style>
 	main {

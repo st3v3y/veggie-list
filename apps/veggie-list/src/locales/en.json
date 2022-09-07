@@ -1,11 +1,20 @@
 {
   "constants" : {
-    "units" : {
-      "unit": "Unit",
-      "dollar": "Dollars",
-      "libra": "Libra",
-      "kilogram": "Kilogram",
-      "gram": "Gram"
+    "units": {
+      "singular" : {
+        "unit": "Unit",
+        "dollar": "Dollar",
+        "libra": "Libra",
+        "kilogram": "Kilogram",
+        "gram": "Gram"
+      },
+      "plural" : {
+        "unit": "Units",
+        "dollar": "Dollars",
+        "libra": "Libras",
+        "kilogram": "Kilograms",
+        "gram": "Grams"
+      }
     }
   },
   "page": {
@@ -34,7 +43,15 @@
     },
     "order": {
         "description": "Create the list for the veggie truck",
-        "title": "Order"
+        "title": "Order",
+        "text.missing_amounts": "Veggies with missing amounts:",
+        "text.copied": "Copied!",
+        "form": {
+          "amount.placeholder": "Amount",
+          "comment.label" : "Comment",
+          "comment.placeholder": "e.g. ripe and medium size",
+          "copy.label" : "Copy"
+        }
     }
   }
 }

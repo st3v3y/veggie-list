@@ -69,7 +69,7 @@
                 </h3>
                 <svg xmlns="http://www.w3.org/2000/svg" on:click={() => (isEdit && veggie) ? veggie.is_favorite = !veggie.is_favorite : ""} class:cursor-pointer={isEdit} width={$starSize} height={$starSize} viewBox="0 0 24 24" fill={veggie.is_favorite ? "#57CC34" : "#AAAAAA"} stroke={veggie.is_favorite ? "#57CC34" : "#AAAAAA"} stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
                 {#if !isEdit}
-                    <span transition:fade class="text-[#AAA]">${veggie.price} / {$_(`constants.units.${veggie.unit}`)}</span>
+                    <span transition:fade class="text-[#AAA]">${veggie.price} / {$_(`constants.units.singular.${veggie.unit}`)}</span>
                 {/if}
             </div>
             <div>
@@ -100,10 +100,10 @@
                             <span class="mt-3">/</span>
                             <div class="min-w-[120px]">
                                 <select name="unit" bind:value={veggie.unit} class="form-input w-full px-3 py-3 rounded-lg border border-slate-400">
-                                    <option value="unit">{$_('constants.units.unit')}</option>
-                                    <option value="libra">{$_('constants.units.libra')}</option>
-                                    <option value="kilogram">{$_('constants.units.kilogram')}</option>
-                                    <option value="gram">{$_('constants.units.gram')}</option>
+                                    <option value="unit">{$_('constants.units.singular.unit')}</option>
+                                    <option value="libra">{$_('constants.units.singular.libra')}</option>
+                                    <option value="kilogram">{$_('constants.units.singular.kilogram')}</option>
+                                    <option value="gram">{$_('constants.units.singular.gram')}</option>
                                 </select>
                             </div>
                             <button class="shadow-veggie p-2 rounded-lg disabled:opacity-50" disabled={!$myForm.valid} on:click={onEditClick}>

@@ -7,7 +7,7 @@ import type { Veggie } from '$lib/types/veggie';
 export const load: PageServerLoad = async ({locals}) => {
 	const response = await api('GET', locals.lang);
 	if (response.status === 404) {
-		// user hasn't created a todo list.
+		// user hasn't created a veggie list.
 		// start with an empty array
 		return {
 			veggies: [] as Veggie[]

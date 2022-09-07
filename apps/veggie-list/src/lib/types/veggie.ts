@@ -3,16 +3,22 @@ export type Veggie = {
 	name: string;
 	name_es: string;
 	price: number;
-	unit: number;
+	unit: PriceUnit;
 	is_favorite: boolean;
 	picture_url:string;
 	created_at: Date;
 	updated_at: Date;
+
+	order_unit: PriceUnit;
+	amount: number;
+	hasComment: boolean;
+	comment: string;
 };
 
 export enum PriceUnit {
-	"Unit",
-	"Libra",
-	"Kilogram",
-	"Gram"
+	unit,
+	dollar,
+	libra,
+	kilogram,
+	gram
 }
