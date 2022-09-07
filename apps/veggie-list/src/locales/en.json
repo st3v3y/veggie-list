@@ -1,0 +1,57 @@
+{
+  "constants" : {
+    "units": {
+      "singular" : {
+        "unit": "Unit",
+        "dollar": "Dollar",
+        "libra": "Libra",
+        "kilogram": "Kilogram",
+        "gram": "Gram"
+      },
+      "plural" : {
+        "unit": "Units",
+        "dollar": "Dollars",
+        "libra": "Libras",
+        "kilogram": "Kilograms",
+        "gram": "Grams"
+      }
+    }
+  },
+  "page": {
+    "veggies": {
+        "title": "Veggies",
+        "description": "Maintain the list of vegetables",
+        "form" : {
+          "name": {
+            "placeholder": "Veggie Name in English",
+            "validation.required": "Name in English is required"
+          },
+          "name_es": {
+            "placeholder": "Veggie Name in Spansh",
+            "validation.required": "Name in Spanish is required"
+          },
+          "price": {
+            "placeholder": "e.g. 1,25",
+            "validation": {
+              "required": "Price is required",
+              "invalid": "Please enter a valid number",
+              "min": "Please enter a price > 0"
+            }
+          },
+          "submit.label" : "Add Veggie!"
+        }
+    },
+    "order": {
+        "description": "Create the list for the veggie truck",
+        "title": "Order",
+        "text.missing_amounts": "Veggies with missing amounts:",
+        "text.copied": "Copied!",
+        "form": {
+          "amount.placeholder": "Amount",
+          "comment.label" : "Comment",
+          "comment.placeholder": "e.g. ripe and medium size",
+          "copy.label" : "Copy"
+        }
+    }
+  }
+}

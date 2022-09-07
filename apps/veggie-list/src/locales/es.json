@@ -1,0 +1,57 @@
+{
+  "constants" : {
+    "units" : {
+      "singular" : {
+        "unit": "Unidad",
+        "dollar": "Dólar",
+        "libra": "Libra",
+        "kilogram": "Kilogramo",
+        "gram": "Gramo"
+      },
+      "plural" : {
+        "unit": "Unidades",
+        "dollar": "Dolares",
+        "libra": "Libras",
+        "kilogram": "Kilogramos",
+        "gram": "Gramos"
+      }
+    }
+  },
+  "page": {
+    "veggies": {
+      "title": "Verduritas",
+      "description": "Mantener la lista de verduras.",
+      "form" : {
+        "name": {
+          "placeholder": "Nombre verdura en ingles",
+          "validation.required": "Se requiere nombre en inglés"
+        },
+        "name_es": {
+          "placeholder": "Nombre verdura en español",
+          "validation.required": "Se requiere nombre en español"
+        },
+        "price": {
+          "placeholder": "p.ej. 1,25",
+          "validation": {
+            "required": "Se requiere precio",
+            "invalid": "Por favor ingrese un número valido",
+            "min": "Por favor ingrese un precio > 0"
+          }
+        },
+        "submit.label" : "¡Agregue verdura!"
+      }
+    },
+    "order": {
+      "description": "Crea la lista para el camión de verduras.",
+      "title": "Ordenar",
+      "text.copied": "Lo copió!",
+      "text.missing_amounts": "Verduras con cantidades faltantes:",
+      "form": {
+        "amount.placeholder": "Monto",
+        "comment.label" : "Comentario",
+        "comment.placeholder": "p.ej. maduro y de tamaño mediano",
+        "copy.label" : "Cópialo!"
+      }
+    }
+  }
+}
