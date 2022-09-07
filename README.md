@@ -29,3 +29,10 @@ npm run dev
 ```
 
 ## Useful Links
+- https://turborepo.org
+- https://kit.svelte.dev/
+- https://nestjs.com/
+- https://chainlist.github.io/svelte-forms/ (used for form validation)
+- https://github.com/kaisermann/svelte-i18n (used for translations)
+- https://github.com/flekschas/svelte-simple-modal (used for "Really-want-to-delete-this?" modal)
+- https://github.com/keenethics/svelte-notifications (used for showing "Copied!" notification)
