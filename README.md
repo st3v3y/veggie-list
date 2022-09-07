@@ -3,6 +3,7 @@
 ## What's inside?
 
 This repo contains an implementation of a test app based on sveltekit and nestjs. Both, the sveltekit app and the nestjs API are apps of a turborepo monorepo.
+To communicate with a MySQL database, I use prisma.
 
 ## Why?
 
@@ -32,6 +33,7 @@ npm run dev
 - https://turborepo.org
 - https://kit.svelte.dev/
 - https://nestjs.com/
+- https://www.prisma.io/ (used to communicate with my MySQL database)
 - https://chainlist.github.io/svelte-forms/ (used for form validation)
 - https://github.com/kaisermann/svelte-i18n (used for translations)
 - https://github.com/flekschas/svelte-simple-modal (used for "Really-want-to-delete-this?" modal)
