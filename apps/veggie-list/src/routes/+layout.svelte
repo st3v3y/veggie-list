@@ -1,6 +1,5 @@
 <script context="module">
 	import { waitLocale } from 'svelte-i18n'
-	import { onMount } from 'svelte'
 
 	export async function preload() {
 		// awaits for the loading of the 'es' and 'en' dictionaries
@@ -8,12 +7,13 @@
 	}
 </script>
 
-<script lang="ts">
+<script	lang="ts">
 	import Header from '$lib/components/header/Header.svelte';
 	import { isLoading, register, init, getLocaleFromNavigator } from 'svelte-i18n';
 	import '../app.css';
 	import { Modals, closeModal } from 'svelte-modals';
 	import Notifications from 'svelte-notifications';
+	import { onMount } from 'svelte';
 	import { pwaInfo } from 'virtual:pwa-info';
 
 	register('es', () => import('../locales/es.json'));
@@ -24,27 +24,12 @@
         initialLocale: getLocaleFromNavigator(),
     });
 
+	let ReloadPrompt: any;
 	onMount(async () => {
-		if (pwaInfo) {
-		const { registerSW } = await import('virtual:pwa-register')
-		registerSW({
-			immediate: true,
-			onRegistered(r: any) {
-				// uncomment following code if you want check for updates
-				// r && setInterval(() => {
-				//    console.log('Checking for sw update')
-				//    r.update()
-				// }, 20000 /* 20s for testing purposes */)
-				console.log(`SW Registered: ${r}`)
-			},
-			onRegisterError(error: any) {
-				console.log('SW registration error', error)
-			}
-		})
-		}
+		pwaInfo && (ReloadPrompt = (await import('$lib/ReloadPrompt.svelte')).default);
 	})
-	
-	$: webManifest = pwaInfo ? pwaInfo.webManifest.linkTag : '';
+
+	$: webManifest = pwaInfo ? pwaInfo.webManifest.linkTag : ''
 </script>
 
 <svelte:head>
@@ -74,6 +59,10 @@
 		</footer>
 	{/if}
 </Notifications>
+
+{#if ReloadPrompt}
+	<svelte:component this={ReloadPrompt} />
+{/if}
 
 <style>
 	main {
