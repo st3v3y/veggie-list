@@ -1,13 +1,13 @@
 <script lang="ts">
+    import { enhance } from '$app/forms';
     import { _, locale } from 'svelte-i18n';
 	import { fade, scale } from 'svelte/transition';
     import { quartInOut } from "svelte/easing";
     import { tweened } from "svelte/motion";
-    import type { Veggie } from '../../types/veggie';
-	import { enhance } from '$lib/form';
     import { form, field } from 'svelte-forms';
   	import { required, min, pattern } from 'svelte-forms/validators';
     import Modal from '../modal/modal.svelte';
+	import type { Veggie } from '@prisma/client';
 
     export let veggie:Veggie|null;
 
@@ -39,13 +39,9 @@
     <Modal title="Are you sure?" message={`Do you really want to delete "${veggie.name}"?`} isOpen={showModal} >
         <div slot="actions" class="flex gap-5 justify-end mt-5">
             <form 
-                action="/veggies?_method=DELETE" 
+                action="?/deleteveggie" 
                 method="post" 
-                use:enhance={{
-                    result: async ({ form }) => {
-                        form.reset();
-                    }
-                }}
+                use:enhance={ async ({ form }) => { form.reset(); }}
             >
                 <input type="hidden" name="id" bind:value={veggie.id} />
                 <button class="bg-red-500 text-white p-2 rounded-lg">Yes</button>
@@ -74,13 +70,9 @@
             </div>
             <div>
                 <form
-                    action="/veggies?_method=PATCH"
+                    action="?/updateveggie"
                     method="post"
-                    use:enhance={{
-                        result: async ({ form }) => {
-                            form.reset();
-                        }
-                    }}
+                    use:enhance={ async ({ form }) => { form.reset(); }}
                 >
                     <input type="hidden" name="id" bind:value={veggie.id} />
                     <input type="hidden" name="isFavorite" bind:value={veggie.is_favorite} />

@@ -1,12 +1,10 @@
 <script lang="ts">
     import { _ } from 'svelte-i18n';
-	import { enhance } from '$lib/form';
+    import { enhance } from '$app/forms';
 	import { form, field } from 'svelte-forms';
   	import { required, min, pattern } from 'svelte-forms/validators';
 	import { createApi } from 'unsplash-js';
 	import { fade, scale } from 'svelte/transition';
-    import enFlag from '$lib/assets/flags/en.svg';
-    import esFlag from '$lib/assets/flags/es.svg';
     import {config} from '$lib/config/config';
 
 	const unsplash = createApi({
@@ -87,28 +85,27 @@
 
             <div class="grow md:mr-14">
                 <form
-                    action="/veggies"
+                    action="?/createveggie"
                     method="post"
-                    use:enhance={{
-                        result: async ({ form }) => {
+                    use:enhance={ async ({form}) => {
                             $name.value = "";
                             $name_es.value = "";
                             form.reset();
                             photoSuggestions = [];
                             photoIndex = 0;
                         }
-                    }}
+                    }
                 >
                     <input type="hidden" name="pictureUrl" bind:value={photoUrl} />
                     <div class="flex">
                         <div class="grow">
                             <div class="relative">
                                 <input type="text" bind:value={$name.value} on:blur={onBlurNameField} name="name" class="form-input w-full pl-12 pr-4 py-3 rounded-lg rounded-b-none  border border-slate-400" aria-label="Enter Veggie name" placeholder={$_("page.veggies.form.name.placeholder")}  />
-                                <img title="English" alt="eng" src={enFlag} class="max-w-[23px] absolute top-4 left-4" />
+                                <img title="English" alt="eng" src="/flags/en.svg" class="max-w-[23px] absolute top-4 left-4" />
                             </div>
                             <div class="relative">
                                 <input type="text" bind:value={$name_es.value} name="name_es" class="form-input w-full pl-12 pr-4 py-3 rounded-lg rounded-t-none border border-slate-400 mt-[-1px]" aria-label="Enter spanish Veggie name" placeholder={$_("page.veggies.form.name_es.placeholder")}  />
-                                <img title="Spanish" alt="esp" src={esFlag} class="max-w-[23px] absolute top-4 left-4" />
+                                <img title="Spanish" alt="esp" src="/flags/es.svg" class="max-w-[23px] absolute top-4 left-4" />
                             </div>
 
                             {#if $myForm.hasError('name.required')}

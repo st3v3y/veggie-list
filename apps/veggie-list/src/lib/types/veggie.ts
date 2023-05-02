@@ -1,19 +1,13 @@
-export type Veggie = {
-	id: string;
-	name: string;
-	name_es: string;
-	price: number;
-	unit: PriceUnit;
-	is_favorite: boolean;
-	picture_url:string;
-	created_at: Date;
-	updated_at: Date;
+import type { Veggie } from "@prisma/client";
 
+export type VeggieExt = {
 	order_unit: PriceUnit;
 	amount: number;
 	hasComment: boolean;
 	comment: string;
 };
+
+export type Veg = Veggie & VeggieExt;
 
 export enum PriceUnit {
 	unit,
