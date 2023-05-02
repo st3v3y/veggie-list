@@ -1,7 +1,5 @@
 <script lang="ts">
     import { createEventDispatcher } from 'svelte';
-    import enFlag from '$lib/assets/flags/en.svg';
-    import esFlag from '$lib/assets/flags/es.svg';
 
     export let value:string|null|undefined = 'en';
     
