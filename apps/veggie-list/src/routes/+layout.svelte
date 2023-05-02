@@ -1,5 +1,6 @@
 <script context="module">
 	import { waitLocale } from 'svelte-i18n'
+	import { onMount } from 'svelte'
 
 	export async function preload() {
 		// awaits for the loading of the 'es' and 'en' dictionaries
@@ -13,6 +14,7 @@
 	import '../app.css';
 	import { Modals, closeModal } from 'svelte-modals';
 	import Notifications from 'svelte-notifications';
+	import { pwaInfo } from 'virtual:pwa-info';
 
 	register('es', () => import('../locales/es.json'));
     register('en', () => import('../locales/en.json'));
@@ -22,7 +24,32 @@
         initialLocale: getLocaleFromNavigator(),
     });
 
+	onMount(async () => {
+		if (pwaInfo) {
+		const { registerSW } = await import('virtual:pwa-register')
+		registerSW({
+			immediate: true,
+			onRegistered(r: any) {
+				// uncomment following code if you want check for updates
+				// r && setInterval(() => {
+				//    console.log('Checking for sw update')
+				//    r.update()
+				// }, 20000 /* 20s for testing purposes */)
+				console.log(`SW Registered: ${r}`)
+			},
+			onRegisterError(error: any) {
+				console.log('SW registration error', error)
+			}
+		})
+		}
+	})
+	
+	$: webManifest = pwaInfo ? pwaInfo.webManifest.linkTag : '';
 </script>
+
+<svelte:head>
+    {@html webManifest}
+</svelte:head>
 
 <Modals>
 	<div
