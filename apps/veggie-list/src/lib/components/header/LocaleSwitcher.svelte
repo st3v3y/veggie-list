@@ -23,12 +23,12 @@
 <div class="choose-locale">
     {#if value == "es"}
         <div class="flag" on:click|once={() => switchLocale("en")}>
-            <img title="English" alt="eng" src={enFlag} />
+            <img title="English" alt="eng" src="/flags/en.svg" />
         </div>
     {/if}
     {#if value == 'en'}
         <div class="flag" on:click|once={() => switchLocale("es")}>
-            <img title="Español" alt="es" src={esFlag} />
+            <img title="Español" alt="es" src="/flags/es.svg" />
         </div>
     {/if}
 </div>

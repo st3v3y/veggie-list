@@ -1,6 +1,6 @@
 <script lang="ts">
 	import VeggieOrder from '$lib/components/veggies/veggie-order.svelte';
-	import type { PageData } from '.svelte-kit/types/src/routes/$types';
+	import type { PageData } from './$types';
 	import Clipboard from 'svelte-clipboard';
 	import { _, locale } from 'svelte-i18n'
 	import { getNotificationsContext } from 'svelte-notifications';

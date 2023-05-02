@@ -1,21 +1,17 @@
-import type { Veggie } from "$lib/types/veggie";
-import type { PageServerLoad } from ".svelte-kit/types/src/routes/todos/$types";
-import { error } from "@sveltejs/kit";
-import { api } from "./veggies/api";
+import type { PageServerLoad } from "./$types";
+import { db } from "$lib/database";
+import type { Veg } from "$lib/types/veggie";
 
 export const load: PageServerLoad = async ({locals}) => {
-	const response = await api('GET', locals.lang ?? '');
-	if (response.status === 404) {
-		return {
-			veggies: [] as Veggie[]
-		};
+	let veggies = [];
+	if (locals.lang == 'es') {
+		veggies = await db.veggie.findMany({
+		  	orderBy: { name_es: 'asc' },
+		});
+	} else {
+		veggies = await db.veggie.findMany({
+				orderBy: { name: 'asc' },
+		});
 	}
-
-	if (response.status === 200) {
-		return {
-			veggies: (await response.json()) as Veggie[]
-		};
-	}
-
-	throw error(response.status);
+	return { veggies: veggies as Veg[] };
 };

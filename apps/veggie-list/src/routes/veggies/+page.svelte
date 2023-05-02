@@ -21,7 +21,3 @@
 
 	<CreateFormfrom></CreateFormfrom>
 </section>
-
-<style>
-
-</style>
