@@ -78,7 +78,7 @@
                     <input type="hidden" name="isFavorite" bind:value={veggie.is_favorite} />
                     {#if isEdit}
                         <div transition:fade class="flex justify-start mt-3 w-full gap-4">
-                            <div class=" relative">
+                            <div class="relative">
                                 <span class="absolute top-3 left-4 text-gray-400">$</span>
                                 <input name="price" bind:value={$price.value}  class="form-input w-full pl-8 pr-4 py-3 rounded-lg border border-slate-400" aria-label="Add Veggie" placeholder={$_("page.veggies.form.price.placeholder")}  />
                                 {#if $myForm.hasError('price.required')}
